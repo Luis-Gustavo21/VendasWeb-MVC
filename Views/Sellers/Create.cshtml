@@ -1,4 +1,4 @@
-﻿@model VendasWeb_MVC.Models.Seller
+﻿@model VendasWeb_MVC.Models.ViewModels.SellerFormViewModel
 @{
     ViewData["Title"] = "Create";
 }
@@ -9,20 +9,24 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div class="form-group">
-                <label asp-for="Nome" class="control-label"></label>
-                <input asp-for="Nome" class="form-control" />
+                <label asp-for="Seller.Nome" class="control-label"></label>
+                <input asp-for="Seller.Nome" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
+                <label asp-for="Seller.Email" class="control-label"></label>
+                <input asp-for="Seller.Email" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="DataNascimento" class="control-label"></label>
-                <input asp-for="DataNascimento" class="form-control" />
+                <label asp-for="Seller.DataNascimento" class="control-label"></label>
+                <input asp-for="Seller.DataNascimento" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="SalarioBase" class="control-label"></label>
-                <input asp-for="SalarioBase" class="form-control" />
+                <label asp-for="Seller.SalarioBase" class="control-label"></label>
+                <input asp-for="Seller.SalarioBase" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Seller.DepartmentId" class="control-label"></label>
+                <select asp-for="Seller.DepartmentId" asp-items="@(new SelectList(Model.Departments,"Id", "Nome"))" class="form-control"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
