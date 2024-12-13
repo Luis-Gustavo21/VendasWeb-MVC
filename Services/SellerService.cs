@@ -39,7 +39,7 @@ namespace VendasWeb_MVC.Services
             }
             catch(DbUpdateException e)
             {
-                throw new IntegrityException(e.Message);
+                throw new IntegrityException("Não é possível excluir o vendedor porque ele tem vendas");
             }
         }
         public async Task UpdateAsync(Seller obj)
