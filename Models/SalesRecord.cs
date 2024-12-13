@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using VendasWeb_MVC.Models.Enums;
 
 namespace VendasWeb_MVC.Models
@@ -9,6 +10,8 @@ namespace VendasWeb_MVC.Models
         public DateTime Data { get; set; }
         public Double Quantia { get; set; }
         public SaleStatus Status { get; set; }
+
+        [Display(Name = "Vendedor")]
         public Seller Seller { get; set; }
         public SalesRecord()
         {

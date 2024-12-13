@@ -30,6 +30,8 @@ namespace VendasWeb_MVC.Models
         [Display(Name = "Salario base")]
         [DisplayFormat(DataFormatString = "{0:F2}")]
         public double SalarioBase { get; set; }
+
+        [Display(Name = "Departmento")]
         public Department Department { get; set; }
 
         [Display(Name = "Departmento")]

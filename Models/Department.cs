@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System;
 using System.Linq;
+using System.ComponentModel.DataAnnotations;
 
 namespace VendasWeb_MVC.Models
 {
@@ -21,6 +22,7 @@ namespace VendasWeb_MVC.Models
         {
             Sellers.Add(seller);
         }
+        [Display(Name = "Venda total")]
         public double TotalSales(DateTime initial, DateTime final)
         {
             return Sellers.Sum(seller => seller.TotalSales(initial, final));
