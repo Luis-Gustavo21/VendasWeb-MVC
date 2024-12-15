@@ -9,7 +9,7 @@ namespace VendasWeb_MVC.Models
     {
         public int Id { get; set; }
         public string Nome { get; set; }
-        public ICollection<Seller> Sellers {  get; set; } = new List<Seller>();
+        public ICollection<Seller> Sellers { get; set; } = new List<Seller>();
         public Department()
         {
         }
@@ -22,7 +22,6 @@ namespace VendasWeb_MVC.Models
         {
             Sellers.Add(seller);
         }
-        [Display(Name = "Venda total")]
         public double TotalSales(DateTime initial, DateTime final)
         {
             return Sellers.Sum(seller => seller.TotalSales(initial, final));

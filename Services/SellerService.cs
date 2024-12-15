@@ -37,7 +37,7 @@ namespace VendasWeb_MVC.Services
                 _context.Seller.Remove(obj);
                 await _context.SaveChangesAsync();
             }
-            catch(DbUpdateException e)
+            catch (DbUpdateException e)
             {
                 throw new IntegrityException("Não é possível excluir o vendedor porque ele tem vendas");
             }
